@@ -25,9 +25,9 @@ public final class CaveLogic {
     }
 
     public void initTreasuresFromFile(Cave cave) throws IOException {
+        // Инициализирует пещеру дракона сокровищами из файла.
         ArrayList<Treasure> treasuresFromFile = new ArrayList<>();
-        BufferedReader bf = null;
-        bf = new BufferedReader(new FileReader("treasure_names.txt"));
+        BufferedReader bf = new BufferedReader(new FileReader("treasure_names.txt"));
         String currentLine;
         Pattern pattern = Pattern.compile("([а-яА-Яa-zA-Z\\d\\-]+(\\s[а-яА-Яa-zA-Z\\d\\-]+)*) \\| (\\d+.?\\d+)");
         while ((currentLine = bf.readLine()) != null) {
@@ -52,6 +52,7 @@ public final class CaveLogic {
 
     public void displayMostExpensiveTreasure(Cave cave)
     {
+        // Выводит в консоль информацию о самом дорогом сокровище в пещере дракона.
         viewer.printMessage("Most expensive treasure in the dragon cave is:");
         ArrayList<Treasure> allTreasures = cave.getTreasures();
         if (!allTreasures.isEmpty())
@@ -72,6 +73,7 @@ public final class CaveLogic {
 
     public ArrayList<Treasure> getTreasuresBySetPrice(Cave cave, double price)
     {
+        // Возвращает выборку сокровищ на заданную сумму.
         cave.getTreasures().sort(Treasure::compareTo);
         ArrayList<Treasure> treasuresBySetPrice = new ArrayList<>();
         double sum = 0;
