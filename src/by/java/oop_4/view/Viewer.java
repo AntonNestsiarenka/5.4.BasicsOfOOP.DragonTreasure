@@ -11,4 +11,9 @@ public final class Viewer {
     {
         System.out.print(text);
     }
+
+    public void printErrorMessage(String text)
+    {
+        System.err.println(text);
+    }
 }

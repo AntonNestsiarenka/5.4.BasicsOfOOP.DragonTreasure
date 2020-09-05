@@ -20,7 +20,7 @@ public class DragonTreasureMain {
         try {
             caveLogic.initTreasuresFromFile(cave);
         } catch (IOException e) {
-            viewer.printMessage(e.getMessage());
+            viewer.printErrorMessage(e.getMessage());
             viewer.printMessage("Failed to initialize treasure data. Check the existence and filename for correct initialization.");
             viewer.printMessage("The application will continue to work correctly without the presence of treasures in the cave.\n");
         }
