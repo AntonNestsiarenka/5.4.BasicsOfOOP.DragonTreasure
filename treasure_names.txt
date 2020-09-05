@@ -1,11 +1,3 @@
-Add data to file with next templates:
-{
-    word | number
-    word-word | number
-    word word | number
-    word word-word | number
-}
-
 Алмаз | 550.0
 Опал огненный | 450.0
 Хризолит | 630.0

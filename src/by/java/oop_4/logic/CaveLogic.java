@@ -29,7 +29,7 @@ public final class CaveLogic {
         ArrayList<Treasure> treasuresFromFile = new ArrayList<>();
         BufferedReader bf = new BufferedReader(new FileReader("treasure_names.txt"));
         String currentLine;
-        Pattern pattern = Pattern.compile("([а-яА-Яa-zA-Z\\d\\-]+(\\s[а-яА-Яa-zA-Z\\d\\-]+)*) \\| (\\d+.?\\d+)");
+        Pattern pattern = Pattern.compile("(^[а-яА-Яa-zA-Z\\d\\-]+(\\s[а-яА-Яa-zA-Z\\d\\-]+)*) \\| (\\d+.?\\d+)$");
         while ((currentLine = bf.readLine()) != null) {
             Matcher matcher = pattern.matcher(currentLine);
             if (matcher.find())
